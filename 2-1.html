@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<script type="text/javascript" src="jquery-1.12.4.min.js"></script>
+	<title>2-1</title>
+</head>
+<body>
+
+	<!--點一下全選後所有checkbox 會全勾，再點一下會全部取消，禁止使用jquery-->
+	<input type="checkbox" name="CheckAll" value="核取方塊" id="CheckAll" />
+      全選以下</label>
+    <br />
+	1.桌子<input type="checkbox" name="Checkbox[]" value="desktop"></br>
+	2.椅子<input type="checkbox" name="Checkbox[]" value="chair"></br>
+	3.電視<input type="checkbox" name="Checkbox[]" value="tv"></br>
+	4.洗衣機<input type="checkbox" name="Checkbox[]" value="wash"></br>
+	5.廚房<input type="checkbox" name="Checkbox[]" value="kitchen"></br>
+	6.浴室<input type="checkbox" name="Checkbox[]" value="bathroom"></br>
+
+
+<script>
+ $(document).ready(function(){
+  $("#CheckAll").click(function(){
+   if($("#CheckAll").prop("checked")){//如果全選按鈕有被選擇的話（被選擇是true）
+    $("input[name='Checkbox[]']").each(function(){
+     $(this).prop("checked",true);//把所有的核取方框的property都變成勾選
+    })
+   }else{
+    $("input[name='Checkbox[]']").each(function(){
+     $(this).prop("checked",false);//把所有的核方框的property都取消勾選
+    })
+   }
+  })
+ })
+</script> 
+
+</body>
+</html>
